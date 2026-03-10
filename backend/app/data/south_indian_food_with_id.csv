@@ -1,0 +1,118 @@
+food_id,food_name,food_base,macro_type,is_veg,is_non_veg,cooking_method,is_breakfast,is_lunch,is_snacks,is_dinner,serving_unit,serving_size,carb_g,fiber_g,protein_g,fat_g,sugar_g,energy_kcal,glycemic_index,is_high_potassium,is_high_saturated_fat,is_high_sodium,potassium_mg,sfa_mg,sodium_mg,is_side
+1,Ragi Idli,ragi|lentil,carb,1,0,fermented,1,0,0,1,piece,3,32.0,5.0,7.0,1.2,0.8,170,60,0,0,0,320,200,220,0
+2,Ragi Dosa,ragi|lentil,carb,1,0,fermented,1,0,0,1,piece,2,34.0,5.0,7.0,4.0,1.5,210,65,0,0,0,340,900,280,0
+3,Whole Wheat Idiyappam,wheat,carb,1,0,steamed,1,0,0,1,nest,3,28.0,4.0,6.0,1.5,1.2,160,55,0,0,0,150,300,180,0
+4,Red Rice Idli,rice|lentil,carb,1,0,fermented,1,0,0,1,piece,3,28.0,3.5,6.0,1.0,0.5,150,62,0,0,0,170,150,210,0
+5,Brown Rice Idli,rice|lentil,carb,1,0,fermented,1,0,0,1,piece,3,29.0,3.5,6.0,1.2,0.6,155,62,0,0,0,180,160,220,0
+6,Brown Rice Dosa,rice|lentil,carb,1,0,fermented,1,0,0,1,piece,2,32.0,3.2,6.5,3.5,1.1,195,64,0,0,0,200,650,260,0
+7,Thinai Upma (Foxtail Millet Upma),millet|vegetable,carb,1,0,sauteed,1,0,0,1,bowl,1,23.0,3.5,4.5,3.0,1.2,150,50,0,0,0,210,500,230,0
+8,Samai Upma,millet|vegetable,carb,1,0,sauteed,1,0,0,1,bowl,1,22.0,3.8,4.2,3.0,1.1,148,50,0,0,0,210,450,220,0
+9,Kuthiraivali Pongal,millet|lentil,carb,1,0,boiled,1,0,0,1,bowl,1,24.0,3.5,6.0,4.0,1.2,165,48,0,0,0,240,800,260,0
+10,Varagu Pongal,millet|lentil,carb,1,0,boiled,1,0,0,1,bowl,1,23.0,3.6,5.8,4.2,1.1,168,49,0,0,0,230,820,270,0
+11,Millet Idiyappam,millet,carb,1,0,steamed,1,0,0,1,nest,3,28.0,4.0,4.5,1.2,0.5,150,54,0,0,0,210,200,160,0
+12,Broken Wheat Upma (Godhumai Rava Upma),wheat|vegetable,carb,1,0,sauteed,1,0,0,1,bowl,1,22.0,3.5,5.0,3.2,2.5,140,55,0,0,0,180,500,280,0
+13,Oats Upma,oats|vegetable,carb,1,0,sauteed,1,0,0,1,bowl,1,19.0,3.8,5.5,3.5,1.2,130,50,0,0,0,170,600,260,0
+14,Oats Idli,oats|lentil,carb,1,0,steamed,1,0,0,1,piece,3,24.0,4.0,6.5,2.5,0.9,145,52,0,0,0,200,400,240,0
+15,Oats Dosai,oats|lentil,carb,1,0,fermented,1,0,0,1,piece,2,26.0,4.0,6.5,3.5,1.0,160,55,0,0,0,220,500,260,0
+16,Vegetable Oats Kanji,oats|vegetable,carb,1,0,boiled,1,0,0,1,bowl,1,14.0,3.0,3.5,2.0,0.6,95,48,0,0,0,150,300,180,0
+17,Barley Kanji,barley,carb,1,0,boiled,1,0,0,1,bowl,1,21.0,4.2,3.0,0.8,0.4,110,45,0,0,0,120,150,120,0
+18,Red Rice Puttu,rice,carb,1,0,steamed,1,0,0,1,cup,1,36.0,3.5,4.5,1.5,0.7,180,60,0,0,0,180,200,160,0
+19,Wheat Rava Upma,wheat|vegetable,carb,1,0,sauteed,1,0,0,1,bowl,1,23.0,3.2,5.0,3.5,2.3,145,56,0,0,0,190,500,290,0
+20,Wheat Semiya Upma,wheat|vegetable,carb,1,0,sauteed,1,0,0,1,bowl,1,25.0,2.0,4.0,3.2,2.5,150,58,0,0,0,140,450,310,0
+21,Adai Dosai,rice|lentil,carb,1,0,fermented,1,0,0,1,piece,2,24.0,5.2,8.8,3.9,1.2,168,50,0,0,0,290,800,230,0
+22,Quinoa Upma,quinoa|vegetable,carb,1,0,sauteed,1,0,0,1,bowl,1,21.3,2.8,4.4,2.6,0.9,138,53,0,0,0,172,350,210,0
+23,Quinoa Pongal,quinoa|lentil,carb,1,0,boiled,1,0,0,1,bowl,1,23.1,3.4,6.7,3.5,0.8,158,55,0,0,0,240,600,220,0
+24,Steamed Sweet Potato,vegetable,carb,1,0,steamed,1,0,1,1,cup,1,20.1,3.0,1.6,0.1,4.2,90,50,1,0,0,475,20,55,0
+25,Boiled Corn,vegetable,carb,1,0,boiled,1,0,1,1,cup,1,21.0,2.4,3.4,1.5,4.5,96,52,0,0,0,270,200,15,0
+26,Pesarattu (Green Gram Dosai),lentil,carb,1,0,fermented,1,0,0,1,piece,2,19.2,4.1,8.7,2.5,1.5,140,45,0,0,0,320,300,180,0
+27,Wheat Chapati,wheat,carb,1,0,roasted,1,1,0,1,piece,2,49.0,6.5,9.0,3.2,0.6,265,62,0,0,0,280,600,5,0
+28,Millet Vegetable Khichdi,millet|lentil|vegetable,carb,1,0,boiled,0,1,0,1,bowl,1,20.8,3.8,6.2,2.6,1.1,140,50,0,0,0,230,350,220,0
+29,Murungai Keerai (Drumstick Leaves),vegetable,fiber,1,0,boiled,0,1,0,0,bowl,1,11.0,2.0,5.3,0.9,1.0,60,35,0,0,0,337,200,60,0
+30,Pasalai Keerai (Spinach),vegetable,fiber,1,0,boiled,0,1,0,0,bowl,1,3.6,2.3,2.9,0.4,0.4,40,32,1,0,0,452,415,285,0
+31,Araikeerai,vegetable,fiber,1,0,sauteed,0,1,0,0,bowl,1,4.0,2.1,2.5,0.3,0.5,23,30,1,0,0,611,70,20,0
+32,Vendhaya Keerai (Fenugreek Leaves),vegetable,fiber,1,0,sauteed,1,1,0,1,bowl,1,6.0,2.6,4.4,0.9,0.7,49,30,0,0,0,395,200,67,0
+33,Muttaikose (Cabbage),vegetable,fiber,1,0,boiled,1,1,0,1,bowl,1,5.6,2.5,1.4,0.1,3.2,24,15,0,0,0,170,16,18,0
+34,Cauliflower,vegetable,fiber,1,0,boiled,1,1,0,1,bowl,1,5.3,2.5,2.0,0.1,2.4,25,15,0,0,0,303,32,30,0
+35,Broccoli,vegetable,fiber,1,0,boiled,1,1,0,1,bowl,1,7.0,2.6,2.8,0.4,1.7,34,15,0,0,0,316,45,33,0
+36,Peerkangai (Ridge Gourd),vegetable,fiber,1,0,boiled,1,1,0,1,bowl,1,3.4,1.1,0.5,0.1,1.7,18,15,0,0,0,139,20,3,0
+37,Suraikkai (Bottle Gourd),vegetable,fiber,1,0,boiled,1,1,0,1,bowl,1,3.7,1.2,0.6,0.1,1.5,17,15,0,0,0,150,20,2,0
+38,Pavakkai (Bitter Gourd),vegetable,fiber,1,0,boiled,1,1,0,1,bowl,1,3.7,2.8,1.0,0.2,1.7,17,18,0,0,0,296,40,5,0
+39,Pudalangai (Snake Gourd),vegetable,fiber,1,0,boiled,1,1,0,1,bowl,1,4.0,1.1,0.6,0.1,0.6,18,20,0,0,0,170,20,10,0
+40,Poosanikai (Ash Gourd),vegetable,fiber,1,0,boiled,0,1,0,1,bowl,1,3.0,2.9,0.4,0.2,1.5,13,15,0,0,0,111,30,6,0
+41,Carrot Porial,vegetable,carb,1,0,sauteed,0,1,0,1,bowl,1,11.6,3.1,2.3,4.9,5.0,93,40,0,0,0,320,1200,220,0
+42,Coconut Pudina Chutney,nut|herb,other,1,0,raw,1,0,1,0,tablespoon,3,11.8,3.7,1.8,15.6,2.0,194,35,0,0,1,156,2660,305,1
+43,Pudina Chutney,herb,other,1,0,raw,1,0,0,1,tablespoon,3,11.3,2.1,2.5,4.0,2.4,108,25,0,0,0,236,800,18,1
+44,Coriander Chutney,herb,other,1,0,raw,1,0,0,1,tablespoon,3,6.8,2.8,2.0,1.6,1.9,44,25,0,0,0,230,200,20,1
+45,Tomato Onion Chutney,vegetable,other,1,0,sauteed,1,0,1,1,tablespoon,3,11.0,1.5,1.3,4.2,6.2,62,35,0,0,0,240,620,180,1
+46,Tomato Garlic Chutney,vegetable,other,1,0,sauteed,1,0,1,1,tablespoon,3,10.5,1.6,1.5,4.5,5.8,65,35,0,0,0,260,700,190,1
+47,Curry Leaves Chutney (Karuveppilai Chutney),herb,other,1,1,sauteed,1,0,0,0,tablespoon,3,12.0,3.0,4.0,4.0,2.0,98,25,1,0,0,420,650,210,1
+48,Peanut Chutney (Kadalai Chutney),nut,other,1,0,raw,1,0,0,1,tablespoon,3,14.4,2.2,9.22,18.36,2.8,260,35,1,0,1,414,3941,475,1
+49,Roasted Gram Chutney (Pottukadalai Chutney),lentil,other,1,0,raw,1,0,0,1,tablespoon,3,50.3,15.0,17.98,17.82,3.0,433,28,1,0,1,400,772,1145,1
+50,Onion Chutney (Vengaya Chutney),vegetable,other,1,0,sauteed,1,0,0,1,tablespoon,3,10.1,1.7,1.3,4.8,4.5,82,35,0,0,0,180,720,190,1
+51,Ridge Gourd Chutney (Peerkangai Chutney),vegetable,other,1,0,sauteed,1,0,0,1,tablespoon,3,6.2,1.6,1.2,3.5,2.4,58,25,0,0,0,160,520,140,1
+52,Bottle Gourd Chutney (Suraikkai Chutney),vegetable,other,1,0,sauteed,1,0,0,0,tablespoon,3,5.8,1.4,1.1,3.2,2.0,52,25,0,0,0,150,480,120,1
+53,Coriander Coconut Chutney,nut|herb,other,1,0,raw,1,0,0,1,tablespoon,2,10.2,3.4,2.2,16.5,2.3,198,35,0,0,1,260,14500,320,1
+54,Mint Coriander Chutney,herb,other,1,0,raw,1,0,0,1,tablespoon,2,6.9,2.6,2.1,1.5,1.8,45,25,0,0,0,220,210,22,1
+55,Garlic Chutney (Poondu Chutney),vegetable,other,1,0,sauteed,1,0,0,1,tablespoon,2,20.44,5.15,3.34,17.55,13.36,255,30,1,0,0,542,2121,178,1
+56,Tomato Pudina Chutney,vegetable|herb,other,1,0,sauteed,1,0,0,1,tablespoon,2,6.3,1.5,1.1,4.3,3.2,62,30,0,0,0,180,600,150,1
+57,Boiled Egg,egg,protein,0,1,boiled,1,1,0,1,piece,1,1.12,0.0,12.6,10.6,1.12,155,0,0,0,0,126,3270,124,0
+58,Egg White Omelette,egg,protein,0,1,sauteed,1,1,0,1,piece-large,1,0.7,0.0,10.9,0.2,0.7,52,0,0,0,0,163,100,166,0
+59,Egg White Bhurji,egg,protein,0,1,sauteed,1,1,0,1,bowl,1,2.1,0.3,12.8,1.1,1.2,78,0,0,0,0,180,220,210,0
+60,Egg Masala (Low Oil),egg,protein,0,1,sauteed,1,1,0,1,bowl,1,5.6,1.2,13.2,8.9,2.6,150,45,0,0,0,210,2600,340,0
+61,Egg Pepper Fry,egg,protein,0,1,sauteed,0,1,1,1,bowl,1,1.9,0.2,12.3,11.5,1.1,168,0,0,0,0,138,3300,170,0
+62,Steamed Egg Podimas,egg,protein,0,1,steamed,1,0,1,0,bowl,1,1.6,0.1,12.6,10.2,1.1,155,0,0,0,0,126,3200,130,0
+63,Egg Onion Stir Fry,egg|vegetable,protein,0,1,sauteed,1,1,0,1,bowl,1,3.4,0.6,12.0,11.0,2.2,172,0,0,0,0,170,3300,210,0
+64,Egg White Scramble,egg,protein,0,1,sauteed,1,1,0,1,piece,2,0.73,0.0,10.86,0.17,0.71,52,0,0,0,1,162,0,320,0
+65,Grilled Chicken Breast,meat,protein,0,1,grilled,1,1,0,1,piece-large,1,0.0,0.0,31.0,3.6,0.0,165,0,1,0,0,256,1000,74,0
+66,Chicken Pepper Fry,meat,protein,0,1,sauteed,1,1,0,1,bowl,1,1.8,0.2,26.5,9.8,0.5,192,0,1,0,0,240,2500,120,0
+67,Chicken Sukka (Low Oil),meat,protein,0,1,sauteed,1,1,0,1,bowl,1,2.6,0.5,25.3,10.2,0.8,205,0,1,0,0,235,2800,130,0
+68,Chicken Keema Stir Fry,meat,protein,0,1,sauteed,1,1,0,1,bowl,1,3.1,0.4,26.8,12.4,0.9,228,0,1,0,0,270,3600,140,0
+69,Chicken Garlic Fry,meat,protein,0,1,sauteed,1,1,0,1,bowl,1,8.31,0.4,19.99,4.9,1.2,161,0,0,0,0,260,1400,210,0
+70,Chicken Curry (Light Gravy),meat,protein,0,1,boiled,1,1,0,1,bowl,1,4.74,0.9,11.47,6.67,2.07,124,0,0,0,1,249,1358,484,0
+71,Chicken Dry Roast,meat,protein,0,1,roasted,1,1,0,1,bowl,1,2.1,0.2,28.1,8.7,0.6,196,0,0,0,0,270,2200,180,0
+72,Chicken Bone Soup,meat,protein,0,1,boiled,1,1,1,1,cup,1,1.2,0.0,6.0,2.5,0.3,40,0,0,0,0,120,700,260,0
+73,Paneer Pepper Fry,milk,protein,1,0,sauteed,0,1,1,1,bowl,1,3.4,0.0,18.3,20.8,1.2,265,27,0,1,0,104,12900,22,0
+74,Paneer Bhurji,milk,protein,1,0,sauteed,1,1,1,1,bowl,1,5.2,0.8,16.5,18.4,2.6,240,35,0,1,0,190,11300,180,0
+75,Paneer Pepper Fry,milk,protein,1,0,sauteed,1,1,0,1,bowl,1,3.4,0.0,18.3,20.8,1.2,265,27,0,1,0,104,12900,22,0
+76,Paneer Bhurji,milk,protein,1,0,sauteed,1,1,1,1,bowl,1,5.2,0.8,16.5,18.4,2.6,240,35,0,1,0,190,11300,180,0
+77,Grilled Paneer Cubes,milk,protein,1,0,grilled,1,1,0,1,piece-large,1,1.2,0.0,18.3,20.8,1.2,265,27,0,1,0,104,13000,22,0
+78,Paneer Capsicum Stir Fry,milk|vegetable,protein,1,0,sauteed,1,1,0,1,bowl,1,2.6,0.6,13.1,14.7,1.6,198,27,0,1,0,136,9100,17,0
+79,Paneer Pudina Fry,milk|herb,protein,1,0,sauteed,1,1,0,1,bowl,1,3.1,0.7,14.2,15.6,1.8,205,27,0,1,0,180,9600,120,0
+80,Paneer Tomato Stir Fry,milk|vegetable,protein,1,0,sauteed,1,1,0,1,bowl,1,4.2,1.1,13.8,14.9,2.7,198,30,0,1,0,220,9400,160,0
+81,Thick Curd (Low Fat),milk,protein,1,0,fermented,1,1,1,1,bowl,1,4.7,0.0,3.5,1.6,4.7,61,35,0,0,0,155,1040,46,0
+82,Greek Yogurt,milk,protein,1,0,fermented,1,1,1,1,bowl,1,3.6,0.0,10.0,0.4,3.2,59,35,0,0,0,141,104,36,0
+83,Spiced Buttermilk,milk,protein,1,0,raw,1,1,1,1,cup,1,4.8,0.0,3.3,1.0,4.8,40,35,0,0,0,151,630,105,0
+84,Paneer Palak Stir Fry,milk|vegetable,protein,1,0,sauteed,1,1,0,1,bowl,1,3.9,1.8,14.1,15.2,1.7,208,30,1,1,0,520,9700,140,0
+85,Sprouted Green Gram Salad,legume|vegetable,protein,1,0,raw,1,1,1,1,bowl,1,8.5,2.0,3.6,0.4,3.2,45,25,0,0,0,160,70,25,0
+86,Sprouted Horse Gram Sundal,legume,protein,1,0,boiled,1,1,1,1,bowl,1,26.0,5.3,9.0,0.6,1.4,142,28,1,0,0,287,110,22,0
+87,Sprouted Chickpea Sundal,legume,protein,1,0,boiled,1,1,1,1,bowl,1,27.4,7.6,8.9,2.6,4.8,164,28,1,0,0,291,270,24,0
+88,Peanut Sundal,nut,protein,1,0,boiled,1,1,1,1,bowl,1,16.1,8.5,25.8,49.2,4.7,567,14,1,1,0,705,6900,18,0
+89,Roasted Peanut Masala,nut,protein,1,0,roasted,0,0,1,0,bowl,1,21.5,8.5,26.1,49.6,4.9,585,14,1,1,0,705,6900,90,0
+90,Soy Chunk Pepper Fry,soy,protein,1,0,sauteed,1,1,0,1,bowl,1,21.0,13.0,52.0,0.5,7.0,336,20,1,0,1,1800,100,520,0
+91,Tofu Pepper Fry,soy,protein,1,0,sauteed,1,1,0,1,bowl,1,2.3,0.3,8.1,4.8,0.6,90,15,0,0,0,121,700,14,0
+92,Tofu Capsicum Stir Fry,soy|vegetable,protein,1,0,sauteed,1,1,0,1,bowl,1,3.8,1.1,7.5,4.6,1.4,88,15,0,0,0,210,650,28,0
+93,Mixed Sprouts Salad,legume|vegetable,protien,1,0,raw,1,1,1,1,bowl,1,9.8,3.4,4.6,0.6,3.1,58,25,0,0,0,180,90,30,0
+94,Black Channa Sundal,legume,protein,1,0,boiled,1,1,1,1,bowl,1,27.4,7.6,8.9,2.6,4.8,164,28,1,0,0,291,270,24,0
+95,Green Gram Sundal,legume,protein,1,0,boiled,1,1,1,1,bowl,1,19.2,7.6,7.0,0.4,2.0,105,31,0,0,0,266,120,2,0
+96,Roasted Almond Mix,nut,protein,1,0,roasted,0,0,1,0,piece,10,21.6,12.5,21.2,49.9,4.4,579,15,1,1,0,733,3800,1,0
+97,Roasted Pumpkin Seed Mix,seed,protein,1,0,roasted,0,0,1,0,piece,10,10.7,6.0,30.2,49.0,1.4,559,10,1,1,0,809,8700,7,0
+98,Thinai Sadam (Foxtail Millet Rice),millet,carb,1,0,boiled,0,1,0,1,cup,1,23.1,2.3,2.9,1.7,0.2,119,50,0,0,0,62,210,3,0
+99,Samai Sadam (Little Millet Rice),millet,carb,1,0,boiled,0,1,0,1,cup,1,25.0,1.8,2.6,0.9,0.2,120,52,0,0,0,91,120,2,0
+100,Kuthiraivali Sadam (Barnyard Millet Rice),millet,carb,1,0,boiled,0,1,0,1,cup,1,28.2,2.2,3.5,0.5,0.1,130,50,0,0,0,110,100,4,0
+101,Varagu Sadam (Kodo Millet Rice),millet,carb,1,0,boiled,0,1,0,1,cup,1,27.6,2.6,3.2,0.6,0.1,128,52,0,0,0,120,120,5,0
+102,Ragi Kali,millet,carb,1,0,boiled,0,1,0,1,bowl,1,22.6,3.6,2.3,0.5,0.3,110,55,0,0,0,150,110,5,0
+103,Ragi Mudde,millet,carb,1,0,boiled,0,1,0,1,piece-large,1,23.0,3.7,2.4,0.5,0.3,112,55,0,0,0,155,115,6,0
+104,Brown Rice,rice,carb,1,0,boiled,0,1,0,1,cup,1,23.0,1.8,2.6,0.9,0.4,112,50,0,0,0,79,240,5,0
+105,Red Rice (Sivappu Arisi),rice,carb,1,0,boiled,0,1,0,1,cup,1,24.5,2.1,2.7,1.0,0.4,116,55,0,0,0,95,260,6,0
+106,Thinai Lemon Rice (Foxtail Millet Lemon Rice),millet,carb,1,0,sauteed,0,1,0,1,cup,1,25.6,3.1,3.4,4.2,1.3,150,54,0,0,0,118,620,280,0
+107,Samai Tomato Rice (Little Millet Tomato Rice),millet,carb,1,0,sauteed,0,1,0,1,cup,1,24.9,3.3,3.5,3.9,2.1,148,55,0,0,0,140,590,300,0
+108,Murungakkai Sambar (Drumstick Sambar),lentil|vegetable,other,1,0,boiled,0,1,0,0,bowl,1,7.6,2.1,3.2,1.6,2.4,62,35,0,0,0,210,320,220,1
+109,Vendakkai Kara Kuzhambu (Okra Tamarind Curry),vegetable,other,1,0,boiled,0,1,0,0,bowl,1,9.2,2.8,1.7,4.8,3.5,92,40,0,0,0,260,720,340,1
+110,Manathakkali Vathal Kuzhambu (Black Nightshade Berry Curry),vegetable,other,1,0,boiled,0,1,0,0,bowl,1,8.7,2.4,1.6,4.9,2.8,96,38,0,0,0,220,740,360,1
+111,Poondu Kuzhambu (Garlic Tamarind Curry),vegetable,other,1,0,boiled,0,1,0,0,bowl,1,11.4,2.3,2.1,5.3,3.9,108,42,0,0,0,310,820,420,1
+112,Kollu Kuzhambu (Horse Gram Curry),legume,other,1,0,boiled,0,1,0,0,bowl,1,14.2,5.3,8.6,2.1,1.8,110,28,0,0,0,287,220,310,1
+113,Paruppu Urundai Kuzhambu (Lentil Dumpling Curry),lentil,other,1,0,boiled,0,1,0,0,bowl,1,13.8,4.6,9.2,4.8,2.1,132,35,0,0,0,260,850,340,1
+114,Keerai Kuzhambu (Spinach Tamarind Curry),vegetable,other,1,0,boiled,0,1,0,0,bowl,1,6.4,2.6,2.8,2.1,1.7,54,32,1,0,0,410,320,210,1
+115,Chow Chow Sambar (Chayote Sambar),lentil|vegetable,other,1,0,boiled,0,1,0,0,bowl,1,7.9,2.3,3.4,1.7,2.1,64,35,0,0,0,235,340,240,1
+116,Kathirikai Kuzhambu (Brinjal Tamarind Curry),vegetable,other,1,0,boiled,0,1,0,0,bowl,1,9.8,3.1,1.9,4.6,3.4,94,38,0,0,0,260,720,350,1
+117,Kollu Rasam (Horse Gram Rasam),legume,protein_fiber,1,0,boiled,0,1,0,0,cup,1,5.4,1.6,2.8,0.8,0.9,38,28,0,0,0,165,120,240,1

@@ -32,14 +32,14 @@ export default function Navbar() {
           {userId ? (
             <>
               <NavLink
-                to="/profile"
+                to="/assistant"
                 className={({ isActive }) =>
                   `${navItemClass} ${
                     isActive ? 'bg-slate-900 text-white' : 'text-slate-700'
                   }`
                 }
               >
-                Profile
+                Dashboard
               </NavLink>
               <NavLink
                 to="/nutrition"
@@ -52,14 +52,24 @@ export default function Navbar() {
                 Nutrition
               </NavLink>
               <NavLink
-                to="/assistant"
+                to="/food-recommendation"
                 className={({ isActive }) =>
                   `${navItemClass} ${
                     isActive ? 'bg-slate-900 text-white' : 'text-slate-700'
                   }`
                 }
               >
-                Personalized Assistant
+                Food Plan
+              </NavLink>
+              <NavLink
+                to="/profile"
+                className={({ isActive }) =>
+                  `${navItemClass} ${
+                    isActive ? 'bg-slate-900 text-white' : 'text-slate-700'
+                  }`
+                }
+              >
+                Profile
               </NavLink>
             </>
           ) : null}

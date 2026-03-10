@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Nutrition from './pages/Nutrition';
 import Assistant from './pages/Assistant';
+import FoodRecommendationPage from './pages/FoodRecommendationPage';
 
 function RequireAuth({ children }) {
   const userId = localStorage.getItem('userId');
@@ -43,6 +44,14 @@ export default function App() {
           element={
             <RequireAuth>
               <Assistant />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/food-recommendation"
+          element={
+            <RequireAuth>
+              <FoodRecommendationPage />
             </RequireAuth>
           }
         />

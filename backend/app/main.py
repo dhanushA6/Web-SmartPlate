@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .config import get_settings
 from .api import auth_routes, profile_routes, nutrition_routes, rag_routes
+from .api.routes import recommendation
 from .services.rag_service import warmup_assistant_resources
 
 
@@ -39,4 +40,10 @@ app.include_router(auth_routes.router)
 app.include_router(profile_routes.router)
 app.include_router(nutrition_routes.router)
 app.include_router(rag_routes.router)
+
+app.include_router(
+    recommendation.router,
+    prefix="/api",
+    tags=["Food Recommendation"],
+)
 
