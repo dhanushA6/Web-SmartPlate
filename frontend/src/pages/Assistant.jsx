@@ -83,8 +83,8 @@ export default function Assistant() {
     <div className="layout-main space-y-6">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="text-xl font-semibold text-slate-900">Personalized Assistant</h1>
-          <p className="text-sm text-slate-500">
+          <h1 className="text-xl sm:text-2xl font-semibold text-slate-900">Nutrition Assistant</h1>
+          <p className="text-sm text-slate-600 mt-1">
             Ask diabetes nutrition questions or request structured meal recommendations.
           </p>
         </div>

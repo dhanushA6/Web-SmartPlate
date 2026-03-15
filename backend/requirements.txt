@@ -12,7 +12,13 @@ sentence-transformers
 python-multipart
 
 pandas
+openpyxl
 numpy
 joblib
 lightgbm
 scikit-learn
+
+
+google-generativeai==0.7.2
+Pillow==10.4.0
+

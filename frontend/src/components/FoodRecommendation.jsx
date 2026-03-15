@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Heart, ThumbsDown, SkipForward, Loader2 } from "lucide-react";
 import { getProfile } from "../api/apiClient";
 import { getFoodRecommendation, sendFoodFeedback } from "../services/recommendationApi";
 
@@ -147,14 +148,14 @@ export default function FoodRecommendation({ nutrition }) {
   return (
     <section className="space-y-6">
       <header className="space-y-1">
-        <h1 className="text-xl font-semibold text-slate-900">Food Recommendation</h1>
-        <p className="text-sm text-slate-500">
+        <h1 className="text-xl sm:text-2xl font-semibold text-slate-900">Food Plan</h1>
+        <p className="text-sm text-slate-600">
           Personalized diabetic-friendly meals based on your macro targets and medical profile.
         </p>
       </header>
 
       <div className="grid gap-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)]">
-        <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm space-y-4">
+        <div className="card p-4 space-y-4">
           <div className="space-y-1">
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
               Meal plan controls
@@ -190,16 +191,23 @@ export default function FoodRecommendation({ nutrition }) {
 
             <button
               type="button"
-              className="primary-btn text-xs sm:text-sm h-9 sm:h-10"
+              className="primary-btn text-xs sm:text-sm h-9 sm:h-10 inline-flex items-center gap-2"
               onClick={handleGenerate}
               disabled={loading}
             >
-              {loading ? "Generating Meal Plan..." : "Generate Meal Plan"}
+              {loading ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  Generating…
+                </>
+              ) : (
+                "Generate Meal Plan"
+              )}
             </button>
           </div>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm space-y-3">
+        <div className="card p-4 space-y-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Target macros for this meal
           </p>
@@ -221,13 +229,13 @@ export default function FoodRecommendation({ nutrition }) {
 
       <div className="space-y-4">
         {error && (
-          <div className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 border border-red-200">
+          <div className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700 border border-red-100">
             {error}
           </div>
         )}
 
         {foods.length > 0 && (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {foods.map((food, idx) => (
               <FoodCard
                 key={`${food.food_id}-${idx}`}
@@ -241,9 +249,11 @@ export default function FoodRecommendation({ nutrition }) {
         )}
 
         {!loading && !error && foods.length === 0 && (
-          <p className="text-sm text-slate-500">
-            Select a meal and generate a plan to see recommended foods.
-          </p>
+          <div className="card p-8 text-center">
+            <p className="text-sm text-slate-600">
+              Select a meal and click Generate Meal Plan to see recommended foods.
+            </p>
+          </div>
         )}
       </div>
     </section>
@@ -268,14 +278,14 @@ function FoodCard({ food, status, loading, onFeedback }) {
 
   const renderStatus = () => {
     if (!status) return null;
-    if (status === "like") return "👍 Liked";
-    if (status === "dislike") return "👎 Disliked";
-    if (status === "skip") return "⏭ Skipped";
+    if (status === "like") return <span className="flex items-center gap-1 text-emerald-600"><Heart size={14} className="fill-current" /> Liked</span>;
+    if (status === "dislike") return <span className="flex items-center gap-1 text-red-600"><ThumbsDown size={14} /> Disliked</span>;
+    if (status === "skip") return <span className="flex items-center gap-1 text-slate-600"><SkipForward size={14} /> Skipped</span>;
     return null;
   };
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm flex flex-col h-full">
+    <div className="card p-4 flex flex-col h-full">
       <div>
         <h3 className="text-sm font-semibold text-slate-900">{food_name}</h3>
         <p className="mt-1 text-xs text-slate-600">
@@ -283,63 +293,51 @@ function FoodCard({ food, status, loading, onFeedback }) {
         </p>
 
         <div className="mt-3 grid gap-2 text-xs text-slate-700 sm:grid-cols-2">
-          <p>
-            <span className="font-semibold">Carbs:</span>{" "}
-            {nutrition.carbs?.toFixed ? nutrition.carbs.toFixed(1) : nutrition.carbs} g
-          </p>
-          <p>
-            <span className="font-semibold">Protein:</span>{" "}
-            {nutrition.protein?.toFixed ? nutrition.protein.toFixed(1) : nutrition.protein} g
-          </p>
-          <p>
-            <span className="font-semibold">Fiber:</span>{" "}
-            {nutrition.fiber?.toFixed ? nutrition.fiber.toFixed(1) : nutrition.fiber} g
-          </p>
-          <p>
-            <span className="font-semibold">Fat:</span>{" "}
-            {nutrition.fat?.toFixed ? nutrition.fat.toFixed(1) : nutrition.fat} g
-          </p>
-          <p className="sm:col-span-2">
-            <span className="font-semibold">Calories:</span>{" "}
-            {nutrition.calories?.toFixed
-              ? nutrition.calories.toFixed(1)
-              : nutrition.calories}{" "}
-            kcal
-          </p>
+          <p><span className="font-semibold text-slate-800">Carbs:</span>{" "}{nutrition.carbs?.toFixed ? nutrition.carbs.toFixed(1) : nutrition.carbs} g</p>
+          <p><span className="font-semibold text-slate-800">Protein:</span>{" "}{nutrition.protein?.toFixed ? nutrition.protein.toFixed(1) : nutrition.protein} g</p>
+          <p><span className="font-semibold text-slate-800">Fiber:</span>{" "}{nutrition.fiber?.toFixed ? nutrition.fiber.toFixed(1) : nutrition.fiber} g</p>
+          <p><span className="font-semibold text-slate-800">Fat:</span>{" "}{nutrition.fat?.toFixed ? nutrition.fat.toFixed(1) : nutrition.fat} g</p>
+          <p className="sm:col-span-2"><span className="font-semibold text-slate-800">Calories:</span>{" "}{nutrition.calories?.toFixed ? nutrition.calories.toFixed(1) : nutrition.calories} kcal</p>
         </div>
       </div>
 
-      <div className="mt-4 flex items-center justify-between gap-2">
+      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap">
         <div className="flex gap-2">
           <button
             type="button"
-            className="px-3 py-1 rounded-full border border-slate-200 text-xs text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             disabled={disabled}
             onClick={() => onFeedback("like")}
+            title="Like"
           >
-            👍 Like
+            <Heart size={14} className={status === "like" ? "fill-red-500 text-red-500" : ""} />
+            Like
           </button>
           <button
             type="button"
-            className="px-3 py-1 rounded-full border border-slate-200 text-xs text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             disabled={disabled}
             onClick={() => onFeedback("dislike")}
+            title="Dislike"
           >
-            👎 Dislike
+            <ThumbsDown size={14} />
+            Dislike
           </button>
           <button
             type="button"
-            className="px-3 py-1 rounded-full border border-slate-200 text-xs text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             disabled={disabled}
             onClick={() => onFeedback("skip")}
+            title="Skip"
           >
-            ⏭ Skip
+            <SkipForward size={14} />
+            Skip
           </button>
         </div>
         {renderStatus() && (
-          <span className="text-xs font-medium text-slate-600">
+          <div className="text-xs font-medium">
             {renderStatus()}
-          </span>
+          </div>
         )}
       </div>
     </div>

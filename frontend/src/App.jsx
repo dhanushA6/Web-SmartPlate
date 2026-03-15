@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Nutrition from './pages/Nutrition';
+import SuitabilityCheck from './pages/SuitabilityCheck';
 import Assistant from './pages/Assistant';
 import FoodRecommendationPage from './pages/FoodRecommendationPage';
 
@@ -36,6 +37,14 @@ export default function App() {
           element={
             <RequireAuth>
               <Nutrition />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/suitability-check"
+          element={
+            <RequireAuth>
+              <SuitabilityCheck />
             </RequireAuth>
           }
         />

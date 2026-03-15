@@ -14,7 +14,7 @@ export default function FoodRecommendationPage() {
   return (
     <main className="layout-main space-y-6">
       {!nutrition && (
-        <div className="rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800 border border-amber-200">
+        <div className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800 border border-amber-200">
           To get meal-level food plans, first run a nutrition prediction from the Nutrition page.
         </div>
       )}

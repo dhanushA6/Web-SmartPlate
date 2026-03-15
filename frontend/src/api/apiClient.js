@@ -36,3 +36,25 @@ export const predictNutrition = (userId) =>
 
 export const askAssistant = (payload) => api.post('/ask-assistant', payload);
 
+// Image-based multi-food detection
+export const detectFoodsFromImage = (file) => {
+  const formData = new FormData();
+  formData.append('file', file);
+
+  return axios.post(`${baseURL}/suitability/detect-foods`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
+};
+
+// Nutrition retrieval for manually entered foods only
+export const fetchFoodNutrition = (foodName) =>
+  api.get('/suitability/food-nutrition', {
+    params: { food_name: foodName }
+  });
+
+// Meal-level suitability evaluation
+export const checkSuitability = (payload) => api.post('/suitability/check-meal', payload);
+
+

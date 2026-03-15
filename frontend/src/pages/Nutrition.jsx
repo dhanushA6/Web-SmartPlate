@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { predictNutrition } from "../api/apiClient";
-import { DailyMacroPieChart, MealDistributionPieChart } from "../components/MacroChart";
+import { DailyMacroPieChart, MealDistributionPieChart, MealMacroBarChart } from "../components/MacroChart";
 
 export default function Nutrition() {
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
+  const storageKey = userId ? `nutritionPrediction:${userId}` : "nutritionPrediction";
 
   const [nutrition, setNutrition] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -17,11 +18,11 @@ export default function Nutrition() {
       return;
     }
 
-    const saved = localStorage.getItem("nutritionPrediction");
+    const saved = localStorage.getItem(storageKey);
     if (saved) {
       setNutrition(JSON.parse(saved));
     }
-  }, [userId, navigate]);
+  }, [userId, navigate, storageKey]);
 
   const handlePredict = async () => {
     if (!userId) return;
@@ -33,7 +34,7 @@ export default function Nutrition() {
       const { data } = await predictNutrition(userId);
 
       setNutrition(data);
-      localStorage.setItem("nutritionPrediction", JSON.stringify(data));
+      localStorage.setItem(storageKey, JSON.stringify(data));
     } catch (err) {
       setError(err.response?.data?.detail || "Failed to predict nutrition");
     } finally {
@@ -43,54 +44,59 @@ export default function Nutrition() {
 
   const handleRefresh = () => {
     setNutrition(null);
-    localStorage.removeItem("nutritionPrediction");
+    localStorage.removeItem(storageKey);
   };
 
   return (
     <div className="layout-main space-y-6">
-
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-xl font-semibold text-slate-900">
-            Nutrition Dashboard
+          <h1 className="text-xl sm:text-2xl font-semibold text-slate-900">
+            Nutrition
           </h1>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-600 mt-1">
             Personalized daily macronutrient requirement prediction
           </p>
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 flex-shrink-0">
           <button
             className="secondary-btn"
             onClick={handleRefresh}
           >
             Clear
           </button>
-
           <button
-            className="primary-btn"
+            className="primary-btn min-w-[140px]"
             onClick={handlePredict}
             disabled={loading}
           >
-            {loading ? "Predicting..." : "Predict Nutrition"}
+            {loading ? (
+              <>
+                <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                Predicting...
+              </>
+            ) : (
+              "Predict Nutrition"
+            )}
           </button>
         </div>
       </div>
 
       {error && (
-        <div className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 border border-red-100">
+        <div className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700 border border-red-100">
           {error}
         </div>
       )}
 
       {nutrition && (
         <>
-          <section className="grid gap-4 md:grid-cols-5">
+          <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
             <StatCard label="Calories" value={nutrition.daily.daily_calories_kcal} unit="kcal" />
-            <StatCard label="Carbohydrates" value={nutrition.daily.daily_carbohydrates_g} unit="g" />
-            <StatCard label="Protein" value={nutrition.daily.daily_protein_g} unit="g" />
-            <StatCard label="Fat" value={nutrition.daily.daily_fat_g} unit="g" />
-            <StatCard label="Fiber" value={nutrition.daily.daily_fiber_g} unit="g" />
+            <StatCard label="Carbohydrates" value={nutrition.daily.daily_carbohydrates_g} unit="g" color="text-nutrition-carbs" />
+            <StatCard label="Protein" value={nutrition.daily.daily_protein_g} unit="g" color="text-nutrition-protein" />
+            <StatCard label="Fat" value={nutrition.daily.daily_fat_g} unit="g" color="text-nutrition-fat" />
+            <StatCard label="Fiber" value={nutrition.daily.daily_fiber_g} unit="g" color="text-nutrition-fiber" />
           </section>
 
           <section className="grid gap-6 lg:grid-cols-2">
@@ -98,44 +104,34 @@ export default function Nutrition() {
             <MealDistributionPieChart distribution={nutrition.distribution} />
           </section>
 
-          <section className="card">
-            <div className="card-header">
-              <h2 className="card-title">Meal-wise macro split</h2>
-            </div>
-
-            <div className="card-body overflow-x-auto">
-              <table className="min-w-full text-sm">
-
-                <thead className="bg-slate-50">
-                  <tr>
-                    <Th>Meal</Th>
-                    <Th>Calories</Th>
-                    <Th>Carbohydrates</Th>
-                    <Th>Protein</Th>
-                    <Th>Fat</Th>
-                    <Th>Fiber</Th>
-                  </tr>
-                </thead>
-
-                <tbody className="divide-y divide-slate-100">
-                  {Object.entries(nutrition.meal_splits).map(([meal, vals]) => (
-                    <tr key={meal} className="hover:bg-slate-50">
-
-                      <Td className="font-medium">
-                        {meal.charAt(0).toUpperCase() + meal.slice(1)}
-                      </Td>
-
-                      <Td>{vals.daily_calories_kcal?.toFixed(1)}</Td>
-                      <Td>{vals.daily_carbohydrates_g?.toFixed(1)}</Td>
-                      <Td>{vals.daily_protein_g?.toFixed(1)}</Td>
-                      <Td>{vals.daily_fat_g?.toFixed(1)}</Td>
-                      <Td>{vals.daily_fiber_g?.toFixed(1)}</Td>
-
-                    </tr>
-                  ))}
-                </tbody>
-
-              </table>
+          <section>
+            <h2 className="text-lg font-semibold text-slate-900 mb-4">Meal-wise macro split</h2>
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              {Object.entries(nutrition.meal_splits).map(([meal, vals]) => (
+                <div
+                  key={meal}
+                  className="card p-4 flex flex-col"
+                >
+                  <h3 className="text-sm font-semibold text-slate-800 capitalize mb-3 pb-2 border-b border-slate-100">
+                    {meal}
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-xs text-slate-600 mb-3">
+                    <span>Calories</span>
+                    <span className="font-semibold text-slate-900 text-right">{vals.daily_calories_kcal?.toFixed(0) ?? "—"} kcal</span>
+                    <span className="text-[#F97316]">Carbs</span>
+                    <span className="font-semibold text-slate-900 text-right">{vals.daily_carbohydrates_g?.toFixed(1) ?? "—"} g</span>
+                    <span className="text-[#3B82F6]">Protein</span>
+                    <span className="font-semibold text-slate-900 text-right">{vals.daily_protein_g?.toFixed(1) ?? "—"} g</span>
+                    <span className="text-[#A855F7]">Fat</span>
+                    <span className="font-semibold text-slate-900 text-right">{vals.daily_fat_g?.toFixed(1) ?? "—"} g</span>
+                    <span className="text-[#22C55E]">Fiber</span>
+                    <span className="font-semibold text-slate-900 text-right">{vals.daily_fiber_g?.toFixed(1) ?? "—"} g</span>
+                  </div>
+                  <div className="mt-auto min-h-[120px]">
+                    <MealMacroBarChart mealName={meal} values={vals} />
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         </>
@@ -144,31 +140,13 @@ export default function Nutrition() {
   );
 }
 
-function StatCard({ label, value, unit }) {
+function StatCard({ label, value, unit, color = "text-slate-900" }) {
   return (
-    <div className="card">
-      <div className="card-body">
-        <p className="text-xs text-slate-500">{label}</p>
-        <p className="mt-1 text-lg font-semibold text-slate-900">
-          {value ? value.toFixed(1) : "--"} {unit}
-        </p>
-      </div>
+    <div className="card p-4">
+      <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">{label}</p>
+      <p className={`mt-1 text-lg sm:text-xl font-semibold ${color}`}>
+        {value != null ? Number(value).toFixed(1) : "—"} {unit}
+      </p>
     </div>
-  );
-}
-
-function Th({ children }) {
-  return (
-    <th className="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">
-      {children}
-    </th>
-  );
-}
-
-function Td({ children, className = "" }) {
-  return (
-    <td className={`px-3 py-2 text-sm text-slate-800 ${className}`.trim()}>
-      {children}
-    </td>
   );
 }
